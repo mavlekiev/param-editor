@@ -3,7 +3,6 @@ import React from "react";
 import { ParamEditor } from "./ParamEditor";
 import { describe, it, expect } from "vitest";
 
-// Создаём обёртку, чтобы получить ref на экземпляр ParamEditor
 // eslint-disable-next-line react/display-name
 const ParamEditorWithRef = React.forwardRef<
   InstanceType<typeof ParamEditor>,
@@ -46,7 +45,6 @@ describe("ParamEditor", () => {
     fireEvent.change(input1, { target: { value: "спортивное" } });
     fireEvent.change(input2, { target: { value: "мини" } });
 
-    // Теперь ref.current — это экземпляр ParamEditor
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const modelResult = ref.current!.getModel();
 
